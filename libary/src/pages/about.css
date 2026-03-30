@@ -1,0 +1,263 @@
+.about-section {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-content {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.dream h3 {
+  font-size: 34px;
+  font-weight: 600;
+  margin: 0;
+}
+.dream h1 {
+  font-size: 50px;
+  font-weight: 800px;
+  margin: 0;
+  color: #fd7e14;
+}
+.yahan {
+  display: inline-flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid #2b7cff;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 8px 12px;
+}
+
+.change {
+  background: linear-gradient(to right, #2b7cff, #1e73e8);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 12px;
+}
+.teacher-image img {
+  width: 100%;
+  height: 100%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    height: 530px;
+    padding: 40px 20px;
+    width: 100%;
+    margin-top: -20px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .dream {
+    text-align: center;
+  }
+
+  .dream h3 {
+    font-size: 25px;
+  }
+
+  .dream h1 {
+    font-size: 32px;
+  }
+
+  .yahan {
+    font-size: 18px;
+    padding: 6px 10px;
+  }
+
+  .change {
+    padding: 6px 12px;
+  }
+
+  .teacher-image img {
+    width: 320px;
+    height: auto;
+    margin: 0;
+  }
+  .big-content h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 392px) {
+  .big-content h1,
+  p {
+    font-size: 25px;
+    width: 299px;
+    text-align: justify;
+  }
+}
+.students {
+  color: #5242d8;
+  /* color: linear-gradient(90deg, rgb(82, 66, 216) 21.49%, rgb(167, 69, 113)); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+.big-content {
+  margin-top: 40px;
+  margin-left: 40px;
+  width: 650px;
+}
+.big-content h1 {
+  font-size: 50px;
+}
+
+.explore-student {
+  /* position: relative; */
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.student-content {
+  top: 20%;
+  text-align: center;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.student-content1 {
+  position: relative;
+  width: 300px;
+  height: 290px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.student-content1 img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.vertical-text {
+  position: absolute;
+  top: 60px;
+  left: 2px;
+  /* height: 100%; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-text p {
+  /* writing-mode: vertical-rl;
+  transform: rotate(180deg); */
+  color: black;
+  font-size: 20px;
+  margin: 5px 0;
+}
+.vertical-text .sticker {
+  color: #f7b551;
+  font-size: 70px;
+}
+@media (max-width: 768px) {
+  .explore-student {
+    height: auto;
+    padding: 40px 20px;
+    width: 100%;
+    margin-top: -20px;
+  }
+  .student-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+/* about-footer */
+.about {
+  background-color: #0d7751;
+  padding: 20px 0;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 40px 20px;
+  /* margin-left: calc(-50vw + 50%); */
+}
+
+.divide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: justify;
+  color: white;
+  margin-top: 60px;
+}
+.divide-footer ul {
+  list-style-type: none;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.follow-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.follow-section img {
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
+  margin-top: 10px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.boxes2 {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollSmall 12s linear infinite;
+}
+
+@keyframes scrollSmall {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .boxes2 {
+    animation: scrollSmall 25s linear infinite;
+  }
+}

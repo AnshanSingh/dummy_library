@@ -1,0 +1,17 @@
+# 1️⃣ Install Flask (main backend framework)
+pip install flask
+
+# 2️⃣ Install CORS (to connect React frontend with Flask backend)
+pip install flask-cors
+
+# 3️⃣ Install JWT (for authentication & token system)
+pip install flask-jwt-extended
+
+# 4️⃣ Install MySQL Connector (to connect Python with MySQL database)
+pip install mysql-connector-python
+
+# 5️⃣ Install bcrypt (for secure password hashing)
+pip install bcrypt
+
+# 6️⃣ Optional - for environment variables (.env file support)
+pip install python-dotenv
