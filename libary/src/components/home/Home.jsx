@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import book_1 from "../../assets/book_1.png";
 import first from "../../assets/first.jpg";
@@ -21,6 +21,16 @@ import { FaCaretRight } from "react-icons/fa";
 import "./home.css";
 
 const Home = () => {
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
   const boxData = [
     {
       title: "Math",
@@ -133,7 +143,7 @@ const Home = () => {
     },
     {
       id: 2,
-      course: "UP Police Contable 2026",
+      course: "UP PET LekhPal 2026",
       des: "By at ₹599 per month",
       purchase: "Buy",
       info: "Explore",
@@ -141,7 +151,7 @@ const Home = () => {
     },
     {
       id: 3,
-      course: "UP Police Contable 2026",
+      course: "UP SI 2026",
       des: "By at ₹599 per month",
       purchase: "Buy",
       info: "Explore",
@@ -149,7 +159,7 @@ const Home = () => {
     },
     {
       id: 4,
-      course: "UP Police Contable 2026",
+      course: "UP TET 2026",
       des: "By at ₹599 per month",
       purchase: "Buy",
       info: "Explore",
@@ -157,7 +167,7 @@ const Home = () => {
     },
     {
       id: 5,
-      course: "UP Police Contable 2026",
+      course: "UP CTET 2026",
       des: "By at ₹599 per month",
       purchase: "Buy",
       info: "Explore",
@@ -165,7 +175,23 @@ const Home = () => {
     },
     {
       id: 6,
-      course: "UP Police Contable 2026",
+      course: "Indian Airforce 2026",
+      des: "By at ₹599 per month",
+      purchase: "Buy",
+      info: "Explore",
+      img: first,
+    },
+    {
+      id: 7,
+      course: "Indian Navy",
+      des: "By at ₹599 per month",
+      purchase: "Buy",
+      info: "Explore",
+      img: first,
+    },
+    {
+      id: 8,
+      course: "Indian Army",
       des: "By at ₹599 per month",
       purchase: "Buy",
       info: "Explore",
@@ -196,7 +222,6 @@ const Home = () => {
     },
   ];
 
-
   const handleBuy = async (course) => {
     const token = localStorage.getItem("token");
 
@@ -219,11 +244,11 @@ const Home = () => {
     const options = {
       key: "rzp_test_SXN1b3biCNk1qH",
       amount: data.amount,
-      currency: "INR", 
+      currency: "INR",
       order_id: data.order_id,
 
-      name: "Course Platform", 
-      description: course.title, 
+      name: "Course Platform",
+      description: course.title,
 
       handler: async function (response) {
         await fetch("http://localhost:5000/verify-payment", {
@@ -291,23 +316,35 @@ const Home = () => {
       </div>
 
       {/* our courses section start here */}
-      <div className="flex-section">
-        <div className="course-child">
-          {[...courseData, ...courseData].map((courses, i) => (
-            <div className="course-box" key={i}>
-              <img src={courses.img} alt="course-img" className="course-img" />
+      {/* <div className="course-aria"> */}
+      <div className="slider-container">
+        <button className="scroll-btn left" onClick={() => scrollLeft()}>
+          ◀
+        </button>
+
+        <div className="course-child" ref={scrollRef}>
+          {courseData.map((courses) => (
+            <div className="course-box" key={courses.id}>
+              <img src={courses.img} alt="course-img" />
               <p>{courses.course}</p>
-              <div className="d-flex align-items-center justify-content-between">
+
+              <div className="d-flex justify-content-between">
                 <p>{courses.des}</p>
                 <p className="buy-course" onClick={() => handleBuy(courses)}>
-                  {courses.purchase}
+                  Buy
                 </p>
               </div>
-              <h5 className="explore">{courses.info}</h5>
+
+              <h5 className="explore">Explore</h5>
             </div>
           ))}
         </div>
+
+        <button className="scroll-btn right" onClick={() => scrollRight()}>
+          ▶
+        </button>
       </div>
+      {/* </div> */}
 
       <div className="footer-section">
         <div className="details_part">

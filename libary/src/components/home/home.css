@@ -100,17 +100,38 @@ button:hover {
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.course-child {
+.course-aria {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* .course-child {
   max-width: 100%;
   width: 1200px;
   margin: 20px auto;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+} */
+
+.course-child {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  /* grid-template-columns: repeat(4, 1fr);  */
+  gap: 20px;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+.course-child::-webkit-scrollbar {
+  display: none;
 }
 .course-box {
-  width: 280px;
-  height: 305px;
+  min-width: 250px;
+  height: 310px;
   border: 1px solid #ddd;
   flex-shrink: 0;
   padding: 15px;
@@ -153,6 +174,69 @@ button:hover {
   transform: var(--expand);
   box-shadow: var(--shadow);
   cursor: pointer;
+}
+
+/* ===== LAPTOP ===== */
+@media (max-width: 1200px) {
+  .course-box {
+    min-width: 260px;
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .course-box {
+    min-width: 220px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .course-box {
+    min-width: 45%; 
+  }
+  .explore {
+    min-width: 45%;
+  }
+}
+
+/* ===== VERY SMALL MOBILE ===== */
+@media (max-width: 400px) {
+  .course-box {
+    min-width: 70%; /* 1 card focus */
+  }
+  .explore {
+    min-width: 70%;
+  }
+}
+
+.slider-container {
+  position: relative;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+.right {
+  padding: 0px;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+  padding: 10px;
 }
 
 .boxes2:hover {
