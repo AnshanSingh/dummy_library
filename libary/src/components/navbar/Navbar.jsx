@@ -18,7 +18,8 @@ const Navbar = () => {
       <div className="container-fluid d-flex justify-content-between">
         {/* left side navbar brand */}
         <Link to="/" className="navbar-brand text-white ms-3">
-          <img src={logo} alt="main_logo" className="logo" />
+          <img src={logo} alt="main_logo" className="logo" />{" "}
+          <span>BL SIR COACING & LIBRARY</span>
         </Link>
 
         <button

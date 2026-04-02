@@ -352,15 +352,16 @@ const Home = () => {
             <span style={{ color: "red" }}>U</span>PSI
           </h1>
           <div className="middle-section">
-            <h5>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-              officiis at reprehenderit.
-            </h5>
+            <h5>Learn, revise, and succeed in UPSI exam</h5>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Necessitatibus maxime nemo qui dicta praesentium mollitia in
-              quaerat tempora quas numquam quidem odio ipsam, expedita dolores
-              est minima fugiat laborum repudiandae reiciendis placeat dolore
+              At BL Sir Library, we are dedicated to shaping the future of
+              aspiring candidates by providing the best guidance for UPSI
+              preparation. Our experienced teachers focus on building strong
+              concepts, smart problem-solving skills, and exam-oriented
+              strategies to help every student succeed. With a disciplined
+              environment, regular practice sessions, and personalized
+              attention, we ensure that each student is fully prepared to
+              achieve their goal of becoming a UP Police SI.
             </p>
             <div className="flex-section">
               <div className="boxes2">
@@ -372,8 +373,8 @@ const Home = () => {
               </div>
             </div>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo vel
-              magnam sed dicta labore a!
+              At BL Sir Library, we guide students with smart strategies and
+              clear concepts to crack the UPSI exam with confidence.
             </p>
           </div>
           {/* middle-section end */}

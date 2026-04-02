@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./contact.css";
-
 import select from "../assets/select.png";
 import students from "../assets/students.png";
 import students_2 from "../assets/students_2.png";
@@ -35,7 +34,7 @@ const Contact = () => {
     ,
   ];
 
-  const loopImages = [...images, ...images]; // duplicate for infinite scroll
+  const loopImages = [...images, ...images];
 
   useEffect(() => {
     const container = scrollRef.current;
