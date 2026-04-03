@@ -8,6 +8,7 @@ import forth from "../../assets/forth.jpg";
 import five from "../../assets/five.jpg";
 import six from "../../assets/six.jpg";
 import seven from "../../assets/seven.jpg";
+import teacher from "../../assets/teacher.png";
 import footerimage2 from "../../assets/footerimage2.jpg";
 import logo from "../../assets/logo.png";
 import insta from "../../assets/insta.avif";
@@ -30,6 +31,27 @@ const Home = () => {
   const scrollRight = () => {
     scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
+
+  const bannerImage = [
+    {
+      img: book_1,
+    },
+    {
+      img: teacher,
+    },
+    {
+      img: five,
+    },
+  ];
+
+  const [image, setImage] = useState(0);
+
+  useEffect(() => {
+    const imageInterval = setTimeout(() => {
+      setImage((prev) => (prev + 1) % bannerImage.length);
+    }, 4000);
+    return () => clearInterval(imageInterval);
+  }, []);
 
   const boxData = [
     {
@@ -276,11 +298,11 @@ const Home = () => {
     <>
       <div className="top-section d-flex justify-content-evenly align-items-center">
         {/* Image Section */}
-        <div className="image-center">
+        <img src={bannerImage[image].img} alt="" />
+        {/* <div className="image-center">
           <img src={book_1} alt="Library" />
         </div>
 
-        {/* Text Section */}
         <div className="text-center">
           <h1>Coaching & Library</h1>
 
@@ -290,7 +312,7 @@ const Home = () => {
           </p>
 
           <button>Learn More</button>
-        </div>
+        </div> */}
       </div>
       {/* Top section end */}
 

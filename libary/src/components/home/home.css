@@ -106,15 +106,6 @@ button:hover {
   overflow: hidden;
 }
 
-/* .course-child {
-  max-width: 100%;
-  width: 1200px;
-  margin: 20px auto;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-} */
-
 .course-child {
   width: 100%;
   max-width: 1200px;
@@ -193,7 +184,7 @@ button:hover {
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
   .course-box {
-    min-width: 45%; 
+    min-width: 45%;
   }
   .explore {
     min-width: 45%;
