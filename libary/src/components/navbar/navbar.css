@@ -16,11 +16,13 @@
     sans-serif;
 }
 nav {
-  background-color: #10898d;
+  background-color: #000000;
   padding: 10px 2%;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
 }
 .navbar .nav-link {

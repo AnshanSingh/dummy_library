@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import book_1 from "../../assets/book_1.png";
+import place1 from "../../assets/place1.png";
+import place2 from "../../assets/place2.png";
+import place3 from "../../assets/place3.png";
 import first from "../../assets/first.jpg";
 import second from "../../assets/second.jpg";
 import third from "../../assets/third.jpg";
@@ -8,7 +11,6 @@ import forth from "../../assets/forth.jpg";
 import five from "../../assets/five.jpg";
 import six from "../../assets/six.jpg";
 import seven from "../../assets/seven.jpg";
-import teacher from "../../assets/teacher.png";
 import footerimage2 from "../../assets/footerimage2.jpg";
 import logo from "../../assets/logo.png";
 import insta from "../../assets/insta.avif";
@@ -32,26 +34,17 @@ const Home = () => {
     scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
 
-  const bannerImage = [
-    {
-      img: book_1,
-    },
-    {
-      img: teacher,
-    },
-    {
-      img: five,
-    },
-  ];
+  const bannerImage = [{ img: place1 }, { img: place2 }, { img: place3 }];
 
   const [image, setImage] = useState(0);
 
   useEffect(() => {
-    const imageInterval = setTimeout(() => {
+    const interval = setInterval(() => {
       setImage((prev) => (prev + 1) % bannerImage.length);
     }, 4000);
-    return () => clearInterval(imageInterval);
-  }, []);
+
+    return () => clearInterval(interval);
+  }, [bannerImage.length]);
 
   const boxData = [
     {
@@ -296,23 +289,15 @@ const Home = () => {
 
   return (
     <>
-      <div className="top-section d-flex justify-content-evenly align-items-center">
-        {/* Image Section */}
-        <img src={bannerImage[image].img} alt="" />
-        {/* <div className="image-center">
-          <img src={book_1} alt="Library" />
-        </div>
-
-        <div className="text-center">
-          <h1>Coaching & Library</h1>
-
-          <p>
-            We provide quality education and peaceful library environment for
-            competitive exam preparation.
-          </p>
-
-          <button>Learn More</button>
-        </div> */}
+      <div className="banner-container">
+        {bannerImage.map((item, index) => (
+          <img
+            key={index}
+            src={item.img}
+            alt=""
+            className={`banner-img ${index === image ? "active" : ""}`}
+          />
+        ))}
       </div>
       {/* Top section end */}
 
